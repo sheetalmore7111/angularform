@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   // domain:any = 'http://localhost:3000/'
-  domain:any = 'https://github.com/sheetalmore7111/IVTASK-RraectForm/'
+  domain:any = 'https://angularform-teal.vercel.app/'
   
   constructor(private http:HttpClient) { }
 
