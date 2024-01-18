@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  // domain:any = 'http://localhost:3000/'
-  private domain: string = '/api/';
+  domain:any = 'http://localhost:3000/'
+  // domain:any = 'https://github.com/sheetalmore7111/IVTASK-RraectForm/'
   
   constructor(private http:HttpClient) { }
 
