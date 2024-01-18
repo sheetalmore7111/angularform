@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   // domain:any = 'http://localhost:3000/'
-  private domain: string = '/api/';
+  private domain: string = 'https://angularform-git-main-sheetals-projects-ab055629.vercel.app/';
   
   constructor(private http:HttpClient) { }
 
