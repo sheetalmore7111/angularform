@@ -1,0 +1,110 @@
+<p>Reactive Form Example.</p>
+
+<button id="addUser">Add User</button>
+
+<form [formGroup]="userForm">
+    <table>
+        <tr>
+            <td> First Name </td>
+            <td><input type="text" name="firstName" id="firstName" formControlName="firstName" required>
+                <div *ngIf="userForm.get('firstName').hasError('required') && userForm.get('firstName').touched">
+                    First Name is required.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td> Last Name </td>
+            <td><input type="text" name="" id="" formControlName="lastName" required>
+                <div *ngIf="userForm.get('lastName').hasError('required') && userForm.get('lastName').touched">
+                    Last Name is required.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email </td>
+            <td><input type="email" name="email" id="email" formControlName="email" required email>
+                <div *ngIf="userForm.get('email').hasError('required') && userForm.get('email').touched">
+                    Email is is required.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Phone No </td>
+            <td><input type="text" name="" id="" formControlName="phone" required>
+                <div *ngIf="userForm.get('phone').hasError('required') && userForm.get('phone').touched">
+                    Phone Number is required.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Company </td>
+            <td><input type="text" name="" id="" formControlName="company" required>
+                <div *ngIf="userForm.get('company').hasError('required') && userForm.get('company').touched">
+                    Company Name is required.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Gender </td>
+            <td><input type="radio" name="gender" id="">Male
+                <input type="radio" name="gender" id="">Female
+
+            </td>
+        </tr>
+        <tr>
+            <td>DOB </td>
+            <td><input type="date" name="" id="" formControlName="dob" required>
+                <div *ngIf="userForm.get('dob').hasError('required') && userForm.get('dob').touched">
+                    DOB is required.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Password </td>
+            <td><input type="password" name="" id="" formControlName="password" required>
+                <div *ngIf="userForm.get('password').hasError('required') && userForm.get('password').touched">
+                    Password is required.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Confirm Password </td>
+            <td><input type="password" name="" id="" formControlName="confirmPassword" required>
+                <div
+                    *ngIf="userForm.get('confirmPassword').hasError('required') && userForm.get('confirmPassword').touched">
+                    Confirm Password is required.
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+    <button class="btn" (click)="onSubmit()" *ngIf="changeButton">Register</button>
+    <button class="btn" (click)="updateUser()" *ngIf="!changeButton">Update</button>
+    <button class="btn" type="reset">Cancel</button>
+</form>
+
+<table height="50px">
+    <tr class="heading">
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Company</td>
+        <td>DOB</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    <tr *ngFor="let person of user">
+        <td>{{person.firstName}}</td>
+        <td>{{person.lastName}}</td>
+        <td>{{person.email}}</td>
+        <td>{{person.phone}}</td>
+        <td>{{person.company}}</td>
+        <td>{{person.dob}}</td>
+        <td><button (click)="getUserById(person.id)">Edit</button></td>
+        <td><button (click)="deleteUser(person.id)">Delete</button></td>
+    </tr>
+</table>
